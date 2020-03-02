@@ -47,6 +47,14 @@ class UI {
 
         list.appendChild(row)
     }
+    //delete item
+    static deleteItem(el){
+        if(el.classList.contains('delete')){
+            el.parentElement.remove();
+        }
+
+
+    }
     //clear field
     static clearField(){
         document.getElementById("title").value=''
@@ -54,11 +62,7 @@ class UI {
         document.getElementById("isbn").value=''
 
     }
-    //delete item
-    static deleteItem(){
-        
-
-    }
+    
 
 }
 
@@ -81,6 +85,7 @@ document.querySelector("#book-form").addEventListener("submit", (e) => {
 
 })
 
+document.getElementById('book-list').addEventListener('click',(e)=>UI.deleteItem(e.target))
 
 
 
